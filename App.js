@@ -6,52 +6,31 @@
  * @flow strict-local
  */
 
-import React, {useEffect, useState} from 'react';
-import {
-  ScrollView,
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  StatusBar,
-} from 'react-native';
-
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, {useEffect} from 'react';
+import {View, Text, StatusBar} from 'react-native';
 import Main from './src/pages/Main';
-const Stack = createStackNavigator();
+
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{
-            headerStyle: {
-              backgroundColor: 'red',
-            },
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerTintColor: 'white',
-          }}
-          name="NewsToday"
-          component={Main}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={{flex: 1}}>
+      <StatusBar animated={true} backgroundColor="#e85454" />
+      <View
+        style={{
+          backgroundColor: '#ff4d4d',
+          padding: 20,
+        }}>
+        <Text
+          style={{
+            fontSize: 20,
+            color: 'white',
+            fontWeight: 'bold',
+          }}>
+          NewsToday
+        </Text>
+      </View>
+      <Main />
+    </View>
   );
 };
-
-// const Check = () => {
-//   return <Text>Hello</Text>;
-// };
-
-const styles = StyleSheet.create({
-  text: {
-    backgroundColor: 'red',
-    textAlign: 'center',
-    color: 'white',
-  },
-});
 
 export default App;

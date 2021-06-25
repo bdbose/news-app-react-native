@@ -19,17 +19,23 @@ const Card = ({descp, imgUrl, newsUrl, source, title}) => {
 
         elevation: 7,
       }}>
-      <Image
+      <View
         style={{
           flex: 1,
-          height: 300,
-          resizeMode: 'contain',
-          backgroundColor: 'black',
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
-        }}
-        source={{uri: imgUrl}}
-      />
+          overflow: 'hidden',
+        }}>
+        <Image
+          style={{
+            flex: 1,
+            height: 300,
+            resizeMode: 'contain',
+            backgroundColor: 'black',
+          }}
+          source={{uri: imgUrl}}
+        />
+      </View>
       <View
         style={{
           padding: 10,
